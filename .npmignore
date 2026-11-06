@@ -1,0 +1,11 @@
+src
+.gitignore
+.git
+node_modules
+examples
+src
+test
+.eslintrc.json
+.prettierrc.json
+.prettierignore
+.prettierignore

@@ -1,0 +1,67 @@
+{
+  "name": "candlekit",
+  "version": "1.0.1",
+  "description": "Turn raw crypto trades into OHLCV candles and calculate SMA, EMA, and RSI.",
+  "keywords": [
+    "crypto",
+    "bitcoin",
+    "trading",
+    "candles",
+    "candlestick",
+    "ohlcv",
+    "indicators",
+    "sma",
+    "ema",
+    "rsi"
+  ],
+  "author": "Floyd J. Reagan <floydreagan36@proton.me>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/candlekit/candlekit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/candlekit/candlekit/issues"
+  },
+  "homepage": "https://github.com/candlekit/candlekit#readme",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "example": "tsup && node examples/binance.js"
+  },
+  "dependencies": {
+    "lodash": "4.17.23"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.27",
+    "@types/node": "^26.6.6",
+    "tsup": "^9.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^5.1.0"
+  }
+}
